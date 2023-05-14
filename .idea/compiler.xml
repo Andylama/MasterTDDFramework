@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Group_B_Final_TDDFramework" />
+        <module name="MasterTDDFramework" />
       </profile>
     </annotationProcessing>
   </component>

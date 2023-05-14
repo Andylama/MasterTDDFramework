@@ -1,5 +1,4 @@
 package utility;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -10,21 +9,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
-
 public class ExcelReader {
-
     private final Logger LOG = LoggerFactory.getLogger(ExcelReader.class);
 
     XSSFWorkbook excelWBook;
     XSSFSheet excelWSheet;
     XSSFCell cell;
-
     String path;
-
     public ExcelReader(String path) {
         this.path = path;
     }
-
     public String getDataFromCell(String sheet, int rowNum, int colNum) {
         try {
             File file = new File(path);
@@ -63,7 +57,6 @@ public class ExcelReader {
         }
         return columnData;
     }
-
     public List<String> getEntireColumnForGivenHeader(String sheet, String headerName) {
         int i = 0;
         while (getDataFromCell(sheet, 0, i) != null) {
@@ -100,8 +93,6 @@ public class ExcelReader {
 //        XSSFCell cell = excelWSheet.getRow(1).getCell(0);
 //        System.out.println(cell);
 //    }
-
-
     }
 
 

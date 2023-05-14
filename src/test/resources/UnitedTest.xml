@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-
-<suite name="United Test Suite" parallel="false">
-
+<!DOCTYPE suite [
+        <!ELEMENT suite (parameter|test)*>
+        <!ATTLIST suite
+                name CDATA #REQUIRED
+                parallel CDATA #REQUIRED>
+        <!ELEMENT parameter (#PCDATA)>
+        <!ATTLIST parameter
+                name CDATA #REQUIRED
+                value CDATA #REQUIRED>
+        <!ELEMENT test (classes)*>
+        <!ATTLIST test
+                name CDATA #REQUIRED>
+        <!ELEMENT classes (class)*>
+        <!ELEMENT class (#PCDATA)>
+        <!ATTLIST class
+                name CDATA #REQUIRED>
+        ]>
+<suite name="Etsy Test Suite" parallel="false">
     <parameter name="useCloudEnv" value="false"/>
     <parameter name="cloudEnvName" value="browserstack"/>
     <!--<parameter name="cloudEnvName" value="saucelab"/>-->
@@ -13,13 +26,11 @@
     <!--        <parameter name="os_version" value="Sierra"/>-->
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="111"/>
-    <parameter name="url" value="https://www.united.com/en/us"/>
-
+    <parameter name="url" value="https://www.united.com/en/us/"/>
     <test name="HomePage">
         <classes>
-            <class name="United.TestUnitedHomepage"></class>
+            <class name="United.TestChangeLanguage"></class>
+
         </classes>
-
     </test>
-
 </suite>

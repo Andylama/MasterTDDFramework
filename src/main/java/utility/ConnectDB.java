@@ -1,6 +1,4 @@
 package utility;
-
-
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import org.slf4j.Logger;
@@ -10,20 +8,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-
 public class ConnectDB {
-
     private final Logger LOG = LoggerFactory.getLogger(ConnectDB.class);
     Properties prop = Utility.loadProperties();
-
     public static MongoDatabase mongoDatabase = null;
-
     public static Connection connect = null;
     public static Statement statement = null;
     public static PreparedStatement ps = null;
     public static ResultSet resultSet = null;
-
-
     public Connection connectToMySql() {
         String driverClass = prop.getProperty("MYSQLJDBC.driver");
         String url = prop.getProperty("MYSQLJDBC.url");
